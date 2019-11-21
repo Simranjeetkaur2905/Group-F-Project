@@ -16,29 +16,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XMR-2s-pQf">
-                                <rect key="frame" x="40" y="732" width="334" height="90"/>
+                                <rect key="frame" x="40" y="722" width="334" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWn-J4-wml">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="vtl-WN-IR1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
                                             <segue destination="Ulm-dv-NhV" kind="show" id="Rjt-6t-Srb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9T5-cY-XNn">
-                                        <rect key="frame" x="0.0" y="50" width="334" height="40"/>
+                                        <rect key="frame" x="0.0" y="60" width="334" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="FS8-3U-V3R"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="LogIn"/>
                                         <connections>
                                             <segue destination="H86-KZ-M3Y" kind="show" id="ekt-tC-N4c"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="iWn-J4-wml" firstAttribute="height" secondItem="9T5-cY-XNn" secondAttribute="height" multiplier="0.75" id="bAv-Ze-3rk"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -50,6 +52,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="nJC-0X-uco"/>
+                    <connections>
+                        <outlet property="login" destination="9T5-cY-XNn" id="jfn-bd-xNr"/>
+                        <outlet property="signup" destination="iWn-J4-wml" id="HdH-0t-pXN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,6 +95,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <action selector="Login:" destination="H86-KZ-M3Y" eventType="touchUpInside" id="r4y-D2-h48"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-3M-Myb">
                                         <rect key="frame" x="0.0" y="210" width="334" height="20.5"/>
@@ -108,15 +117,21 @@
                         <viewLayoutGuide key="safeArea" id="NnC-yD-kGn"/>
                     </view>
                     <navigationItem key="navigationItem" id="i56-BM-673"/>
+                    <connections>
+                        <outlet property="Email" destination="C2v-q2-MA9" id="N0a-em-nAh"/>
+                        <outlet property="Error" destination="cc7-3M-Myb" id="mNa-8f-F49"/>
+                        <outlet property="Loginbutton" destination="zPw-KK-ByW" id="jt8-a4-CD1"/>
+                        <outlet property="Password" destination="bz9-R6-4p0" id="fre-NL-hbc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxe-ca-Cjh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1902.8985507246377" y="547.76785714285711"/>
         </scene>
-        <!--Signin View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="Fop-Ta-Qyh">
             <objects>
-                <viewController id="Ulm-dv-NhV" customClass="SigninViewController" customModule="Group_F_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ulm-dv-NhV" customClass="SignupViewController" customModule="Group_F_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pQI-HI-B6v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,6 +178,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Sign up"/>
+                                        <connections>
+                                            <action selector="Signup:" destination="Ulm-dv-NhV" eventType="touchUpInside" id="N25-ge-hH7"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47o-zK-C3s">
                                         <rect key="frame" x="0.0" y="350" width="334" height="20.5"/>
@@ -182,6 +200,14 @@
                         <viewLayoutGuide key="safeArea" id="ZYP-AG-uTJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="60n-KA-ShU"/>
+                    <connections>
+                        <outlet property="Emailid" destination="APw-Pf-sVo" id="JXw-Q2-Rma"/>
+                        <outlet property="Errortext" destination="47o-zK-C3s" id="5hz-y3-1sH"/>
+                        <outlet property="Firstname" destination="sgM-F3-bT7" id="bbQ-HC-nQ3"/>
+                        <outlet property="Lastname" destination="sgM-F3-bT7" id="EE1-xB-7M3"/>
+                        <outlet property="Password" destination="Qyc-3r-3c0" id="FV8-Rg-XQi"/>
+                        <outlet property="signupbutton" destination="n7w-Wy-yK8" id="jPE-Py-gae"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BK3-d4-fig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

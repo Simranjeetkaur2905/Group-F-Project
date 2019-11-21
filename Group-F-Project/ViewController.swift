@@ -10,10 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var login: UIButton!
+    @IBOutlet var signup: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setUpElements()
     }
+    func setUpElements() {
+          
+          Utilities.styleFilledButton(signup)
+          Utilities.styleHollowButton(login)
+          
+      }
+
 
 
 }
